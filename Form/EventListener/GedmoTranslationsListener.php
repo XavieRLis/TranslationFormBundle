@@ -46,7 +46,7 @@ class GedmoTranslationsListener implements EventSubscriberInterface
 
         foreach ($formOptions['locales'] as $locale) {
             if (isset($childrenOptions[$locale])) {
-                $form->add($locale, 'a2lix_translationsFields', array(
+                $form->add($locale, TranslationsFieldsType::class, array(
                     'fields' => $childrenOptions[$locale],
                     'translation_class' => $this->translationForm->getTranslationClass($translatableClass),
                 ));
